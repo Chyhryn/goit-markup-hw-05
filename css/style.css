@@ -12,6 +12,10 @@
   --secondary-bg-color: #f5f4fa;
   --grey-bg-color: #c4c4c4;
   --icons-main-color: #afb1b8;
+
+  /* Animations */
+  --anim-duration: 250ms;
+  --anim-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -121,6 +125,7 @@ ul {
 
   text-decoration: none;
   color: var(--main-color);
+  transition: color var(--anim-duration) var(--anim-timing-function);
 }
 
 .link:hover,
@@ -204,6 +209,7 @@ ul {
 
   color: var(--secondary-accent-color);
   background-color: var(--accent-color);
+  transition: background-color var(--anim-duration) var(--anim-timing-function);
 }
 
 .hero-btn:hover,
@@ -269,14 +275,33 @@ ul {
 .services-list {
   display: flex;
   justify-content: space-between;
+  
 }
 
 .services-item {
+  position: relative;
   margin-right: 30px;
+  
 }
 
 .services-item:last-child {
   margin-right: 0;
+}
+
+.services-description {
+  position: absolute;
+  bottom: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--secondary-accent-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 /* Team section */
@@ -343,8 +368,11 @@ ul {
 
   width: 44px;
   height: 44px;
+  border-radius: 50%;
 
   color: var(--icons-main-color);
+  transition: background-color var(--anim-duration) var(--anim-timing-function),
+    color var(--anim-duration) var(--anim-timing-function);
 }
 
 .social-link:hover,
@@ -352,7 +380,7 @@ ul {
   background-color: var(--accent-color);
   color: var(--secondary-accent-color);
 
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 .team-social-icons {
@@ -396,6 +424,9 @@ ul {
   border: 1px solid var(--icons-main-color);
   border-radius: 4px;
   color: var(--icons-main-color);
+
+  transition: color var(--anim-duration) var(--anim-timing-function),
+    border-color var(--anim-duration) var(--anim-timing-function);
 }
 
 .clients-link:hover,
@@ -473,11 +504,12 @@ ul {
 
   width: 44px;
   height: 44px;
-
   border-radius: 50%;
 
   background-color: #44454e;
   color: var(--secondary-accent-color);
+
+  transition: background-color var(--anim-duration) var(--anim-timing-function);
 }
 
 .footer-social-link:hover,
@@ -548,7 +580,10 @@ ul {
   display: block;
   font-family: inherit;
   text-decoration: none;
+
   color: currentColor;
+
+  transition: box-shadow var(--anim-duration) var(--anim-timing-function);
 }
 
 .work-link:hover,
@@ -569,6 +604,10 @@ ul {
 
   color: var(--secondary-color);
   background-color: var(--secondary-bg-color);
+
+  transition: color var(--anim-duration) var(--anim-timing-function),
+    background-color var(--anim-duration) var(--anim-timing-function),
+    box-shadow var(--anim-duration) var(--anim-timing-function);
 }
 
 .works-btn:hover,
@@ -583,6 +622,8 @@ ul {
 .current-btn {
   color: var(--secondary-accent-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .work-text {
