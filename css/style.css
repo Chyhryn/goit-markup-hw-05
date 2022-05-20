@@ -624,7 +624,8 @@ ul {
   transition: transform var(--anim-duration) var(--anim-timing-function);
 }
 
-.work-link:hover .work-overlay {
+.work-link:hover .work-overlay,
+.work-link:focus .work-overlay {
   transform: translateY(-100%);
 }
 
