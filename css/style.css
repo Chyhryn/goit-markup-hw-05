@@ -283,10 +283,26 @@ ul {
   fill: currentColor;
 }
 
-.is-hidden {
+.backdrop.is-hidden {
   opacity: 0;
-  visibility: 0;
+  visibility: hidden;
   pointer-events: none;
+}
+
+.backdrop .modal-wrapper {
+  animation: modal-scale 2000ms linear;
+}
+
+@keyframes modal-scale {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 /* Benefits section */
 
